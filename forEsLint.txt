@@ -1,0 +1,43 @@
+.eslintrc.json create 
+cope paste below code
+##
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:node/recommended",
+    "plugin:react/recommended"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "node",
+    "react"
+  ],
+  "rules": {
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "no-console": "warn", // Warns about console logs
+    "react/prop-types": "off" // Disable prop-types since you're likely using TypeScript
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // Automatically picks the version you have installed
+    }
+  }
+}
+##
+run in terminal
+1) npm install eslint eslint-plugin-node eslint-plugin-react babel-eslint --save-dev
+2) add script to package.json
+ "scripts": {
+  "lint": "eslint . --fix"
+}
+3) npm run lint
